@@ -3,7 +3,7 @@ import sys
 import numpy as np
 
 
-def anonymize(source, destination, visualize=False, thickness=-1, output_dims=(800, 800, 3), num_circles=(20,20)):
+def anonymize(source, destination, visualize=False, thickness=-1, output_dims=(400, 400, 3), num_circles=(20,20)):
     """
     Anonymize an image.
 
