@@ -1,2 +1,2 @@
 # anonavi
-turn real images into anonymous profile images
+turn real images into anonymous profile pictures
