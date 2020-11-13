@@ -3,7 +3,7 @@ import sys
 import numpy as np
 
 
-def anonymize(source, destination, visualize=False, thickness=-1, output_dims=(800, 800, 3), num_circles=(20,20), ):
+def anonymize(source, destination, visualize=False, thickness=-1, output_dims=(800, 800, 3), num_circles=(20,20)):
     """
     Anonymize an image.
 
@@ -31,7 +31,7 @@ def anonymize(source, destination, visualize=False, thickness=-1, output_dims=(8
     colors = [im[y,x].tolist() for x in x_samples_source for y in y_samples_source]
     positions = [(x, y) for x in x_samples_canvas for y in y_samples_canvas]
     for i in range(len(positions)):
-        cv2.circle(canvas, positions[i], radius, colors[i], thickness)
+        cv2.circle(canvas, positions[i], radius, colors[i], thickness, lineType=cv2.LINE_AA)
 
     cv2.imwrite(destination, canvas)
 
@@ -50,4 +50,5 @@ if __name__ == "__main__":
     source = args[0]
     destination = args[0] if len(args) == 1 else args[1]
 
-    anonymize(source, destination, visualize=False, thickness=40)
+    # anonymize(source, destination, visualize=True, thickness=75)
+    anonymize(source, destination, visualize=True)
